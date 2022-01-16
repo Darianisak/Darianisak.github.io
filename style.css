@@ -1,85 +1,109 @@
-/*  Global stylings that are not platform specific  */
+/*  This CSS takes a mobile first approach, with desktop stylings found
+    at the bottom */
 
-* {
-  background-color: #333;
-  color: white;
-}
-
-.navigation_links {
+html {
+  background-color: #8acfe8;
+  color: #412998;
 
 }
 
-/*  Viewport tailored style support. Pixel sizings sourced from:
-https://www.lambdatest.com/blog/how-to-use-css-breakpoints-for-responsive-design/
-*/
-@media only screen and (min-width: 320px) and (max-width: 480px) 
-   {
-  /*  Mobile tailored stylings  */
-
-  * {
-    /*  Used to setup global variables for small form factor  */
-    background-color: red;
-    font-size: 1em;
-  }
-
-  header  {
-    /*  Sets up the header encapsulation that the logo sits in  */
-    margin: 0px 0px 100px 0px;
-    background-color: #333;
-  }
-
-  header, h2  {
-    margin: 0px 0px;
-    font-size: 2em;
-    font-family: Arial Black;
-    direction: ltr;
-  }
-
-  h1  {
-    /*  Used to override normalize.css overkill override  */
-    font-size: 1em;
-  }
-
-  .navigation_links {
-    /*  Provides stylings for the buttons */
-    list-style-type: none;
-    background-color: white;
-
-  }
+h2  {
+  font-family: Arial Black;
 }
 
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-  /*  iPad and tablet tailored stylings */
-  * {
-    /*  Used to setup global variables for small form factor  */
-    background-color: blue;
-    font-size: 1em;
-  }
+.under {
+  /*  Used to provide underlining styles
+      */
+  text-decoration: underline;
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1024px)  {
-  /*  Small screens and laptops */
-  * {
-    /*  Used to setup global variables for small form factor  */
+.emph {
+  /*  Used to provide emphasis styles
+      */
+  font-size: 1.75em;
+  font-family: Arial Black;
+}
+
+.head_elem {
+  /*  https://stackoverflow.com/questions/49419962/
+      how-to-position-text-5-from-the-right-edge-of-the-screen/49420007
+
+      For the offset of .title to work properly, this element,
+      which is its parent, must be set to relative
+      */
+  position: relative;
+  border-style: dashed;
+}
+
+.title {
+  /*  Applies stylings to the header, i.e. the darianisak part.
+      The style sets the title 2% away from the right edge,
+      at a size of 3.75 the browsers defined default.
+      */
+  position: absolute;
+  font-family: Arial Black;
+  right: 3%;
+  font-size: 3.75em;
+}
+
+.content  {
+  /*  Defines styles for the parent of the content section
+      */
+  position: relative;
+  border-style: dashed;
+  font-family: Arial;
+
+  /*  Provides seperation from the top of the page and
+      .head_elem.
+      */
+  top: 175px;
+}
+
+.general_information  {
+  position: absolute;
+  text-align: left;
+  margin-left: 5px;
+
+  /*  general_information is aligned to the top left corner
+      of .content and therefore doesn't need a top adjust.
+      */
+  top: 0px;
+}
+
+.general_information h2  {
+  font-size: 2.5em;
+}
+
+.general_sub  {
+  margin-left: 10px;
+  border-style: dashed;
+}
+
+.further_information  {
+  position: absolute;
+  text-align: left;
+  margin-left: 5px;
+  top: 350px;
+}
+
+.footer_data  {
+  /*  Defines styles for the parent of the footer section
+      */
+  position: relative;
+  border-style: dashed;
+  font-family: Arial;
+
+  /*  Provides seperation from the top of the page and
+      .head_elem.
+      */
+  top: 875px;
+}
+
+/*  The below media query provides styles for landscape displays, i.e
+    desktop monitor screens */
+
+@media screen and (orientation: landscape) {
+  html {
     background-color: black;
-    font-size: 1em;
-  }
-}
-
-@media only screen and (min-width: 1025px) and (max-width: 1200px) {
-  /*  Desktops, large screens */
-  * {
-    /*  Used to setup global variables for small form factor  */
-    background-color: green;
-    font-size: 1em;
-  }
-}
-
-@media only screen and (min-width: 1201px)  {
-  /*  Larger screens, TVs. Note that this is my native development res  */
-  * {
-    /*  Used to setup global variables for small form factor  */
-    background-color: orange;
-    font-size: 1em;
   }
 }
