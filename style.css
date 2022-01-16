@@ -12,16 +12,16 @@ h2  {
 }
 
 .under {
-  /*  Used to provide underlining styles
-      */
+  /*  Used to provide underlining styles */
   text-decoration: underline;
 }
 
 .emph {
-  /*  Used to provide emphasis styles
-      */
-  font-size: 1.75em;
-  font-family: Arial Black;
+  /*  Used to provide emphasis styles */
+  font-size: 5vmin;
+  font-family: Arial;
+  font-weight: bolder;
+
 }
 
 .head_elem {
@@ -29,8 +29,7 @@ h2  {
       how-to-position-text-5-from-the-right-edge-of-the-screen/49420007
 
       For the offset of .title to work properly, this element,
-      which is its parent, must be set to relative
-      */
+      which is its parent, must be set to relative */
   position: relative;
 }
 
@@ -43,62 +42,62 @@ h2  {
   font-family: Arial Black;
   right: 3%;
   /*  Margin control used to push it to the page top */
-  margin-top:  50px;
-  font-size: 12vmin;
-  border-style: dotted;
+  margin-top:  2vh;
+  font-size: 13vmin;
 }
 
 .content  {
-  /*  Defines styles for the parent of the general_information section
-      */
+  /*  Defines styles for the parent of the general_information section */
   position: relative;
-  border-style: dashed;
   font-family: Arial;
 
   /*  Provides seperation from the top of the page and
-      .head_elem.
-      */
-  top: 250px;
+      .head_elem. */
+  top: 20vh;
 }
 
 .general_information  {
   position: absolute;
   text-align: left;
-  margin-left: 5px;
+  left: 3%;
 
   /*  general_information is aligned to the top left corner
-      of .content and therefore doesn't need a top adjust.
-      */
+      of .content and therefore doesn't need a top adjust. */
   top: 0px;
 }
 
-.general_information h2  {
-  font-size: 2.5em;
+.underwritten {
+  /*  Used to provide style to the "and I'm a..." */
+  position: absolute;
+  font-size: 2.5vmin;
+  left: 51.5%;
 }
 
 .general_sub  {
-  margin-left: 10px;
-  border-style: dashed;
+  position: relative;
+  top: 2vh;
+  padding-bottom: 2vh;
+  left: 14%;
+  font-size: 2.25vmin;
 }
 
 .further_information  {
   position: absolute;
   text-align: left;
   margin-left: 5px;
-  top: 350px;
+  top: 650px;
 }
 
 .footer_data  {
   /*  Defines styles for the parent of the footer section
       */
   position: relative;
-  border-style: dashed;
   font-family: Arial;
 
   /*  Provides seperation from the top of the page and
       .head_elem.
       */
-  top: 875px;
+  top: 1875px;
 }
 
 /*  The below media query provides styles for landscape displays, i.e
