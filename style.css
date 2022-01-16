@@ -32,7 +32,6 @@ h2  {
       which is its parent, must be set to relative
       */
   position: relative;
-  border-style: dashed;
 }
 
 .title {
@@ -43,11 +42,14 @@ h2  {
   position: absolute;
   font-family: Arial Black;
   right: 3%;
-  font-size: 150pt;
+  /*  Margin control used to push it to the page top */
+  margin-top:  50px;
+  font-size: 12vmin;
+  border-style: dotted;
 }
 
 .content  {
-  /*  Defines styles for the parent of the content section
+  /*  Defines styles for the parent of the general_information section
       */
   position: relative;
   border-style: dashed;
@@ -56,7 +58,7 @@ h2  {
   /*  Provides seperation from the top of the page and
       .head_elem.
       */
-  top: 175px;
+  top: 250px;
 }
 
 .general_information  {
