@@ -70,10 +70,19 @@ h2  {
   /*  Used to provide style to the "and I'm a..." */
   position: absolute;
   font-size: 2.5vmin;
-  left: 51.5%;
+  left: 51.75%;
+}
+
+.about {
+  /*  Used to provide style to the "and I'm a..." */
+  position: absolute;
+  font-size: 2.5vmin;
+  left: 83.75%;
 }
 
 .general_sub  {
+  /*  Used to provide style to the bulk of the the general content
+      i.e. computer science student... Java, Python. */
   position: relative;
   top: 2vh;
   padding-bottom: 2vh;
@@ -82,21 +91,30 @@ h2  {
 }
 
 .further_information  {
+  /*  Used to provide style to the section containing links */
   position: absolute;
   text-align: left;
-  margin-left: 5px;
-  top: 650px;
+  left: 3%;
+  top: 48.5vh;
+}
+
+.further_sub  {
+  /*  Child styling of further_information. Used to style link elements
+      etc. */
+  position: relative;
+  top: 2vh;
+  padding-bottom: 2vh;
+  left: 14%;
+  font-size: 2.25vmin;
 }
 
 .footer_data  {
-  /*  Defines styles for the parent of the footer section
-      */
+  /*  Defines styles for the parent of the footer section */
   position: relative;
   font-family: Arial;
 
   /*  Provides seperation from the top of the page and
-      .head_elem.
-      */
+      .head_elem. */
   top: 1875px;
 }
 
