@@ -226,7 +226,38 @@ h2  {
     desktop monitor screens */
 
 @media screen and (orientation: landscape) {
-  html {
-    background-color: black;
+
+  .further_information  {
+    /*  Used to provide style to the section containing links */
+    position: absolute;
+    text-align: left;
+    left: 50%;
+    top: 0vh;
+  }
+
+  .further_information .title_sub  {
+    display: none;
+  }
+
+  .redcircleMid  {
+    z-index: -1;
+  }
+
+  .bluecircleMid  {
+    z-index: -1;
+  }
+
+  .yellowcircleMid  {
+    z-index: -1;
+  }
+
+  .further_sub  {
+    /*  Child styling of further_information. Used to style link elements
+        etc. */
+    position: relative;
+    top: 12vh;
+    padding-bottom: 0vh;
+    left: 25%;
+    font-size: 4vmin;
   }
 }
