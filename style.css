@@ -116,7 +116,7 @@ h2  {
 
 .emph {
   /*  Used to provide emphasis styles */
-  font-size: 5.5vmin;
+  font-size: 7vmin;
   font-family: Arial;
   font-weight: bolder;
 }
@@ -157,7 +157,7 @@ h2  {
 
   /*  Provides seperation from the top of the page and
       .head_elem. */
-  top: 15vh;
+  top: 18vh;
 }
 
 .general_information  {
@@ -172,16 +172,17 @@ h2  {
 
 .underwritten {
   /*  Used to provide style to the "and I'm a..." */
+  white-space: nowrap;
   position: absolute;
-  font-size: 3vmin;
-  left: 79.25%;
+  font-size: 4vmin;
+  left: 59.5%;
 }
 
 .about {
-  /*  Used to provide style to the "and I'm a..." */
+  /*  Used to provide style to the "about in further_sub" */
   position: absolute;
-  font-size: 3.5vmin;
-  left: 85.5%;
+  font-size: 4vmin;
+  left: 83.5%;
 }
 
 .general_sub  {
@@ -191,7 +192,7 @@ h2  {
   top: 2.5vh;
   padding-bottom: 0vh;
   left: 8%;
-  font-size: 3vmin;
+  font-size: 4vmin;
 }
 
 .further_information  {
@@ -199,7 +200,7 @@ h2  {
   position: absolute;
   text-align: left;
   left: 3%;
-  top: 42.5vh;
+  top: 38.5vh;
 }
 
 .further_sub  {
@@ -209,7 +210,7 @@ h2  {
   top: 2.5vh;
   padding-bottom: 0vh;
   left: 8%;
-  font-size: 3vmin;
+  font-size: 4vmin;
 }
 
 .footer_data  {
