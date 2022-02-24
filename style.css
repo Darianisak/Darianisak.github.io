@@ -231,7 +231,9 @@ h2  {
   top: 1875px;
 }
 
+/*  Used for direct manipulation of the iOS client  */
 @supports (-webkit-touch-callout: none) {
+
   .further_information  {
     /*  Used to provide style to the section containing links */
     top: 15vh;
