@@ -5,6 +5,9 @@ html {
   background-color: white;
 }
 
+a {
+  color: inherit;
+}
 
 /*
   SECTION STYLING: For applying styles to collections, i.e. divs of class 'x'
@@ -30,6 +33,14 @@ html {
   border: 3px solid purple;
   background: black;
   margin: 10px 0px;
+  border-radius: 0.5rem;
+  color: blue
+}
+
+.tile:hover {
+  background-color: blue;
+  transition: 0.2s;
+  color: red;
 }
 
 .right-column {
