@@ -15,7 +15,7 @@ html {
   border: 3px solid green;
 }
 
-.content {
+.page-inner {
   color: #0b0b0b;
   display: flex;
   border: 3px solid red;
@@ -26,11 +26,22 @@ html {
   border: 3px solid blue;
 }
 
+.tile {
+  border: 3px solid purple;
+  background: black;
+  margin: 10px 0px;
+}
+
 .right-column {
   flex: 70%;
   border: 3px solid orange;
 }
 
+.content {
+  border: 3px solid purple;
+  background: blue;
+  margin: 10px 0px;
+}
 
 /*
   TEXT STYLINGS: The following styles impact the appearance of text, not 'elements'.
@@ -40,4 +51,6 @@ html {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 100;
 }
+
+
 
