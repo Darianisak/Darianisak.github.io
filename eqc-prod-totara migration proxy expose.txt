@@ -1,0 +1,45 @@
+Context:
+cluster migration from learn-gov18d20-prod2 to learn-gov22d22-prod1 using the NGINX proxying branch resulted in a site outage w/ NGINX 403.
+
+
+
+Why did this happen?
+
+
+To start, a bit of context;
+
+For EQC, we block certain IP addresses from accessing their website - this is what's called an 'allowlist', and is handled by our webservers (NGINX).
+This allowlist is created by Eplay/Ansible during either a setup, or a migration.
+You can see the IP addresses that we let reach the website in `/ansible/roles/setup_webserver/templates/clients/eqc/conf.d/overrides_allow_list.j2`.
+For 99% of sites, we don't create allowlists - EQC is an exception to the rule.
+
+In day-to-day work, limiting who can see the EQC site is fine - the Catalyst networks that our _dev_ machines use are all on the allowlist, so we typically don't need to think about it. We'll circle back to this soon.
+
+Changing track for a second, how does your computer know how to 'reach' a website? It uses a thing called a DNS resolver (Domain Name System resolver) - which, for all intents and purposes, is a paper map.
+This map tells your computer where to find websites (a sites DNS records linking to it's IP address), and uses a thing called a time-to-live (TTL) to control how often it's buying a new map (requesting a new record).
+Going a bit more technical, If we talk about a site's DNS having a TTL of 3600, then it means we're replacing our map to that site every 3600 seconds, or once an hour. 
+
+This is why site migrations can be a bit prickly - the maps that our clients have tell them that the site is on one street (cluster), whereas it's really two blocks over (the new cluster) and they aren't making a trip to the map store for another hour.
+Subsequently, traffic gets 'lost', until they buy a new map (the TTL expires and they request a new record).
+
+One way to get around this is by proxying the traffic - the gist being that the people at the old address tell the clients where the previous tenants moved to.
+The 'gotcha' here, though, is that the client will no longer be coming from their house to the old address - their coming from the old address to the new one.
+In a technical sense, their source address becomes that of the webserver they were proxied from.
+
+
+Circling back to EQC, then, a few factors came together to cause the site to go down:
+- The site was moving from one address to another via an ansible assisted migration.
+- The sites time-to-live wasn't decreased, so our client's stored maps weren't scheduled to be replaced for an hour post migration.
+- Proxying via the webserver (NGINX Proxying) was in the mix, which gave a false sense of security.
+
+The question, then, is why didn't NGINX proxying work - why did it give a false sense of security?
+
+Recall two things; EQC has an allowlist to control who can see the site, and NGINX Proxying changes the source address of the clients request.
+Combine these two things together, and the outcome is that NGINX on the new webservers (correctly) blocks client requests coming from the old webservers, as they aren't in the allowlist.
+
+The solution, in this case, was to add the public IPs of the old webservers to the webserver allowlists of the new one.
+We retrieved the webserver public IPs by logging into the old webservers and running `curl ipconfig.me`
+
+Looking at this from a glass-half-full angle, while an unfortunate and stressful event, was a great way to reveal edge-case oversights in our proxying implementation.
+
+
